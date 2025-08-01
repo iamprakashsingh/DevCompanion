@@ -3,9 +3,13 @@ import morgan from 'morgan'
 import connect from './db/db.js'
 import userRoutes from './routes/user.routes.js'
 import cookieParser from 'cookie-parser';
+import cors from 'cors'
 connect(); 
 const app = express();
 // now the morgan will give us the log for every http request
+// ye isliye lagaya hai taki wo console me CORS policy wala error na aaye ki backend agar resources ko use kr
+// raha hai to koi or nhi kr skta hum frontend ko allow kr rhe hain
+app.use(cors())
 app.use(morgan('dev'))
 app.use(express.json());
 app.use(express.urlencoded({extended : true}))
