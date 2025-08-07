@@ -25,7 +25,7 @@
 
 ---
 
-## 📂 Project Structure
+
 DevCompanion/
 ├── backend/
 │ ├── controllers/
